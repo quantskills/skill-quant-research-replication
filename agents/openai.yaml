@@ -1,0 +1,4 @@
+interface:
+  display_name: "量化研究复现"
+  short_description: "搜索论文/研报，完成中文翻译、因子复现验证、BACKTEST 策略回测和交付摘要。"
+  default_prompt: "搜索或复现这项量化研究，生成中文翻译、因子公式复现、因子验证报告、BACKTEST 策略回测报告和最终交付摘要。"
