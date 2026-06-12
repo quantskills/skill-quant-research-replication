@@ -1,6 +1,14 @@
 ---
 name: quant-research-replication
-description: "Search for quantitative finance papers or research reports, then reproduce them end to end: source discovery across arXiv/Crossref/Semantic Scholar/SSRN/NBER/RePEc/institutional reports/Chinese broker research, full Chinese translation, AI summary, factor formula reconstruction, factor effectiveness validation, standalone beginner-readable HTML factor report, BACKTEST strategy generation and local backtest execution, Chinese backtest explanation report, and final delivery summary. Use when the user asks to find quant papers/reports, replicate a report/PDF/link/text, validate a factor, generate BACKTEST strategy code, or create a beginner-readable research replication package."
+description: 'Search for quantitative finance papers or research reports, then reproduce
+  them end to end: source discovery across arXiv/Crossref/Semantic Scholar/SSRN/NBER/RePEc/institutional
+  reports/Chinese broker research, full Chinese translation, AI summary, factor formula
+  reconstruction, factor effectiveness validation, standalone beginner-readable HTML
+  factor report, BACKTEST strategy generation and local backtest execution, Chinese
+  backtest explanation report, and final delivery summary. Use when the user asks
+  to find quant papers/reports, replicate a report/PDF/link/text, validate a factor,
+  generate BACKTEST strategy code, or create a beginner-readable research replication
+  package.'
 license: GPL-3.0-only
 metadata:
   organization: QuantSkills
@@ -9,6 +17,28 @@ metadata:
   repository_url: https://github.com/quantskills/skill-quant-research-replication
   project_type: skill
   collection: quant-research-replication
+quantSkills:
+  project_type: skill
+  category: replication
+  tags:
+  - research-replication
+  - quant-finance
+  - papers
+  - factors
+  - chinese-report
+  platforms:
+  - claude-code
+  - codex
+  - openclaw
+  - cursor
+  status: stable
+  validation_level: runnable
+  maintainer_type: official
+  summary_zh: 搜索或接收量化论文、研报、PDF、网页、文本材料，产出一套完整的研究复现交付包：全文翻译 → 因子公式复现 → 有效性验证 → 策略代码
+    → 真实本地回测 → 交付摘要。
+  summary_en: Quant research replication skill for source discovery, formula reconstruction,
+    Chinese summaries, validation, and deliverables.
+  license: GPL-3.0
 ---
 
 # Quant Research Replication BACKTEST
