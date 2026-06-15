@@ -1,6 +1,14 @@
 ---
 name: quant-research-replication
-description: "Search for quantitative finance papers or research reports, then reproduce them end to end: source discovery across arXiv/Crossref/Semantic Scholar/SSRN/NBER/RePEc/institutional reports/Chinese broker research, full Chinese translation, AI summary, factor formula reconstruction, factor effectiveness validation, standalone beginner-readable HTML factor report, BACKTEST strategy generation and local backtest execution, Chinese backtest explanation report, and final delivery summary. Use when the user asks to find quant papers/reports, replicate a report/PDF/link/text, validate a factor, generate BACKTEST strategy code, or create a beginner-readable research replication package."
+description: 'Search for quantitative finance papers or research reports, then reproduce
+  them end to end: source discovery across arXiv/Crossref/Semantic Scholar/SSRN/NBER/RePEc/institutional
+  reports/Chinese broker research, full Chinese translation, AI summary, factor formula
+  reconstruction, factor effectiveness validation, standalone beginner-readable HTML
+  factor report, BACKTEST strategy generation and local backtest execution, Chinese
+  backtest explanation report, and final delivery summary. Use when the user asks
+  to find quant papers/reports, replicate a report/PDF/link/text, validate a factor,
+  generate BACKTEST strategy code, or create a beginner-readable research replication
+  package.'
 license: GPL-3.0-only
 metadata:
   organization: QuantSkills
@@ -11,6 +19,29 @@ metadata:
   collection: quant-research-replication
   creator: abgyjaguo
   maintainer: abgyjaguo
+quantSkills:
+  project_type: skill
+  category: replication
+  tags:
+  - research-replication
+  - quant-finance
+  - papers
+  - factors
+  - chinese-report
+  platforms:
+  - claude-code
+  - codex
+  - hermes
+  - openclaw
+  - cursor
+  status: stable
+  validation_level: runnable
+  maintainer_type: official
+  summary_zh: 搜索或接收量化论文、研报、PDF、网页、文本材料，产出一套完整的研究复现交付包：全文翻译 → 因子公式复现 → 有效性验证 → 策略代码
+    → 真实本地回测 → 交付摘要。
+  summary_en: Quant research replication skill for source discovery, formula reconstruction,
+    Chinese summaries, validation, and deliverables.
+  license: GPL-3.0
 ---
 
 # Quant Research Replication BACKTEST
@@ -35,6 +66,13 @@ This skill is self-contained for source discovery, translation, factor reconstru
 - Do not deliver English narrative sections, English-only reports, or mojibake/garbled Chinese. If a tool generates English or garbled HTML, wrap or rewrite it into a Chinese reader-facing artifact and preserve the raw file separately for audit.
 - Before final delivery, spot-check the main readable files for Chinese readability rather than relying only on automated quality gates.
 - Explain quant concepts as if the reader is smart but new to quant research. Prefer restrained science writing: concise, concrete, and evidence-led.
+
+## Chart Image Text Rules
+
+- Text rendered inside generated chart image files must be English ASCII only. This includes PNG/SVG titles, subtitles, axis labels, legends, colorbar labels, annotation text, heatmap labels, in-image table headers, and watermarks.
+- Keep Chinese explanations outside the image in the HTML/Markdown captions and chart explanation blocks. The report can remain Chinese-readable while the chart pixels stay font-compatible.
+- When using Matplotlib, Seaborn, Plotly static export, or another image renderer, use broadly available Latin fonts such as `DejaVu Sans` or `Arial`. Do not set CJK chart fonts such as `SimHei`, `SimSun`, `Microsoft YaHei`, `Noto Sans CJK`, or `Source Han Sans`.
+- Prefer English chart labels from `references/factor_validation_checklist.md`, for example `Benchmark NAV Comparison`, not Chinese translations. If the original factor/report name is Chinese, draw an ASCII-safe display label in the chart and keep the original Chinese name in the surrounding report text.
 
 ## Required Output Contract
 
@@ -244,6 +282,7 @@ At minimum evaluate:
 Report readability requirements:
 
 - Write the report in Chinese. English terms may appear only as short labels, metric abbreviations, formulas, or artifact names.
+- Render every chart image with English ASCII text only; keep Chinese reader-facing explanations in the HTML below each image.
 - Add a `How To Read This Report` / `阅读指南` section near the top that explains the evidence chain from factor definition, bias audit, IC, portfolio test, OOS result, and BACKTEST result.
 - Add a metric dictionary explaining at least IE, IC, Rank IC, ICIR, Positive IC Ratio, Annual Return, Annual Volatility, Sharpe, Calmar, Max DD, Win Rate, NAV, IS, and OOS.
 - Under every chart, include a Chinese beginner-facing explanation block. It must be specific to that chart and contain:
