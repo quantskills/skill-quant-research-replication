@@ -9,6 +9,8 @@ metadata:
   repository_url: https://github.com/quantskills/skill-quant-research-replication
   project_type: skill
   collection: quant-research-replication
+  creator: abgyjaguo
+  maintainer: abgyjaguo
 ---
 
 # Quant Research Replication BACKTEST
